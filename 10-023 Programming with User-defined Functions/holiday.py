@@ -12,16 +12,16 @@ Which room type would you prefer:
     2. Premimum: ${room_costs['premium']} per night
 Please enter the room type: '''))                   # If user input matches the provided option, calculate hotel costs
         if room_type.lower() == "double":
-            return(nights * room_costs["double"])   # Retrieves room rate from room_costs dictionary, calculate and returns hotel costs and breaks away from loop
+            return nights * room_costs["double"]   # Retrieves room rate from room_costs dictionary, calculate and returns hotel costs and breaks away from loop
         elif room_type.lower() == "premium":
-            return(nights * room_costs["premium"])  # Retrieves room rate from room_costs dictionary, calculate and returns hotel costs and breaks away from loop
+            return nights * room_costs["premium"]  # Retrieves room rate from room_costs dictionary, calculate and returns hotel costs and breaks away from loop
         else:
             print("\nInvalid input, plese enter again")
 
 # ================== Function to calculcate the flight costs ================================ #
 def plane_cost(destination):
     flight_cost = city_flight_costs[destination]    # Retrieves flight cost from the city_flight_costs dictionary based on destination
-    return(flight_cost)
+    return flight_cost
 
 # ================== Function to calculcate the ar rentak costs ============================= #
 def car_rental(car_days):
@@ -32,15 +32,15 @@ Which car type would you prefer:
     2. SUV: ${car_rental_costs['SUV']} per day
 Please enter the car type: ''')) # If user input matches the provided option, calculate car rental costs
         if room_type.lower() == "sedan":
-            return(car_days * car_rental_costs['Sedan'])    # Retrieves car rate from car_rental_costs dictionary, calculate and returns car rental costs and breaks away from loop
+            return car_days * car_rental_costs['Sedan']    # Retrieves car rate from car_rental_costs dictionary, calculate and returns car rental costs and breaks away from loop
         elif room_type.lower() == "suv":
-            return(car_days * car_rental_costs['SUV'])      # Retrieves car rate from car_rental_costs dictionary, calculate and returns car rental costs and breaks away from loop
+            return car_days * car_rental_costs['SUV']     # Retrieves car rate from car_rental_costs dictionary, calculate and returns car rental costs and breaks away from loop
         else:
             print("\nInvalid input, plese enter again")
 
 # ================== Function to calculcate total holiday costs ============================= #
 def holiday_costs(flight_cost, hotel_cost, car_cost):       # Pass the calculcated values for hotel, flight and car costs
-    return(flight_cost + hotel_cost + car_cost)             # Return the sum of all values for total costs 
+    return flight_cost + hotel_cost + car_cost             # Return the sum of all values for total costs 
 
 # ================== Function to calculcate total holiday costs ============================= #
 def city_options():
@@ -51,7 +51,7 @@ def city_options():
         print("4. Melbourne")
         user_choice = input("\nPlease the name of the city from the list: ")
         if (user_choice.lower() == "london") or (user_choice.lower() == "paris") or (user_choice.lower() == "new york") or (user_choice.lower() == "melbourne"):
-            return(user_choice.lower())             # Return the city entered by user. Convert into lower case for any capitalization
+            return user_choice.lower()             # Return the city entered by user. Convert into lower case for any capitalization
         else:
             print("\nInvalid input, plese enter again")
             
